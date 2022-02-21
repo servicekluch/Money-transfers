@@ -1,11 +1,11 @@
 fun main() {
     val commissionPercentage = 0.075
-    val minimumCommission = 35L
-    val transfertInKopecks = 10
+    val minimumCommission = 3500L
+    val transfertInKopecks = 100
 
     fun calcCommission(amount: Long): Long {
-        val commission = (commissionPercentage * amount).toLong()
-        return if (commission > minimumCommission) commission * transfertInKopecks else minimumCommission * transfertInKopecks
+        val commission = (commissionPercentage * (amount*transfertInKopecks)).toLong()
+        return if (commission > minimumCommission) commission else minimumCommission
     }
 
     println("Введите сумму перевода в руб.:")
